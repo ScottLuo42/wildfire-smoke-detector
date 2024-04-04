@@ -1,0 +1,15 @@
+artifact_uri: file:///mnt/c/Users/PeiwinLu1/OneDrive%20-%20Auckland%20Transport/scott/projects/wildfire-smoke-detector/mlruns/0/ab022f2ecab34ac9b09f1cc4883a1369/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ab022f2ecab34ac9b09f1cc4883a1369
+run_name: yolov8s_exp_v1
+run_uuid: ab022f2ecab34ac9b09f1cc4883a1369
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712273407893
+status: 1
+tags: []
+user_id: scott

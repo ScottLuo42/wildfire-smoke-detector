@@ -5,13 +5,17 @@ import mlflow
 import yaml
 from dotenv import load_dotenv
 from ultralytics import YOLO
+from ultralytics import settings
+
+# Update a setting
+settings.update({'mlflow': True})
 
 from utils import save_metrics_and_params, save_model
 
 
 load_dotenv()
 
-MLFLOW_TRACKING_URI=os.getenv('MLFLOW_TRACKING_URI')
+MLFLOW_TRACKING_URI=os.getenv('MLFLOW_TRACKING_URI', "runs/mlflow")
 
 root_dir = Path(__file__).resolve().parents[1]  # root directory absolute path
 data_dir = os.path.join(root_dir, "data/raw/wildfire-raw-yolov8")
@@ -51,6 +55,8 @@ if __name__ == '__main__':
         mlflow.log_param('epochs',params['epochs'])
         mlflow.log_param('optimizer', params['optimizer'])
         mlflow.log_param('learning_rate', params['lr0'])
+
+        mlflow.pytorch.log_model(pre_trained_model, "yolov8s_model")
 
         # save model
         save_model(experiment_name=params['name']) 
