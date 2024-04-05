@@ -56,7 +56,10 @@ if __name__ == '__main__':
         mlflow.log_param('optimizer', params['optimizer'])
         mlflow.log_param('learning_rate', params['lr0'])
 
-        mlflow.pytorch.log_model(pre_trained_model, "yolov8s_model")
+        try:
+            mlflow.pytorch.log_model(pre_trained_model, "yolov8s_model")
+        except Exception as e:
+            print(f"Failed to log model: {e}")
 
         # save model
         save_model(experiment_name=params['name']) 

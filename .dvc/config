@@ -1,2 +1,4 @@
+[core]
+    remote = origin
 ['remote "origin"']
     url = https://dagshub.com/ScottLuo42/wildfire-smoke-detector.dvc

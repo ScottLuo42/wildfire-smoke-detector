@@ -1,31 +1,40 @@
 schema: '2.0'
 stages:
   train:
-    cmd: python src/train.py
+    cmd: python3 src/train.py
     deps:
     - path: data/raw/wildfire-raw-yolov8
-      md5: ffe9083905cf64817ca61146b3356bb6.dir
-      size: 28867246
-      nfiles: 1482
+      hash: md5
+      md5: c8e7661c5612de4b50ad0a2748b496d7.dir
+      size: 28874521
+      nfiles: 1477
     - path: params.yaml
-      md5: 90c8a91448adb21cc4696472b74a8488
-      size: 217
+      hash: md5
+      md5: adc0df879b4bb0dc206703cd56ed8aa5
+      size: 227
     - path: src/train.py
-      md5: 6746a939a17bbf4e2e2bd23a226b69ec
-      size: 1774
+      hash: md5
+      md5: a2a2f02b69ec84a2ed8ef088e78bd84e
+      size: 2041
     - path: src/utils.py
       md5: 5440f0cb53d7c318e2233a2414c32147
       size: 1228
     outs:
     - path: models/model.pt
-      md5: a8fa6711eedec056b859e0f899f853ed
-      size: 22495096
+      hash: md5
+      md5: 33488f8dba84bcc1fa0fba08b6d61716
+      size: 22503449
+      isexec: true
     - path: reports/train_metrics.csv
-      md5: 3dff9c138e51118de8a8af9e6514a7a1
-      size: 2016
+      hash: md5
+      md5: 8c78227d80add808a03c52b7b8b4759b
+      size: 7056
+      isexec: true
     - path: reports/train_params.yaml
-      md5: af87c316be94e7fa041886e97287b048
-      size: 1503
+      hash: md5
+      md5: 3bd71e41c9d89392a740171db11107db
+      size: 1660
+      isexec: true
   test:
     cmd: python src/predict.py
     deps:
